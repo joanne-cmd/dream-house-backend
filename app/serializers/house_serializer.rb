@@ -1,5 +1,5 @@
 class HouseSerializer < ActiveModel::Serializer
   attributes :id, :title, :location, :desc, :price, :image, :category
 
-  has_many :reviews
+  # has_many :reviews
 end
