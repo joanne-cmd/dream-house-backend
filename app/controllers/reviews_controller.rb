@@ -42,6 +42,6 @@ end
     private
 
     def review_params
-        params.permit(:comment)
+        params.permit(:comment, :user_id, :house_id, :id )
     end
 end

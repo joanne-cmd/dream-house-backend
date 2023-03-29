@@ -114,7 +114,8 @@ puts "Seeding houses"
     # seeding user
     20.times do
         User.create(name: Faker::Name.name,
-        email: Faker::Internet.email)
+        email: Faker::Internet.email,
+      password_digest: Faker::Internet.password(min_length: 8, max_length: 16) )
     end
 
     House.all.each do |house|

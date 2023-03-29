@@ -13,4 +13,5 @@ class UsersController < ApplicationController
             render json: {error: "user not found"}, status: :not_found
         end
     end
+    
 end
