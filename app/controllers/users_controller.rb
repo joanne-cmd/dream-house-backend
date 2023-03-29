@@ -13,5 +13,19 @@ class UsersController < ApplicationController
             render json: {error: "user not found"}, status: :not_found
         end
     end
-    
+    # create a user
+    def create
+        user= User.create!(user_params)
+        if user.valid?
+            render json:user, status: :created
+        else
+            render json: user.error.messages
+        end
+    end
+
+    private
+    def user_params
+        params.permit(:name, :email, :password_digest)
+    end
+
 end
