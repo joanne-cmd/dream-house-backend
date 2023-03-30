@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
     private 
-
+    before_action :authorized
     def authorize
         @user = User.find_by(id: session[:user_id])
         
