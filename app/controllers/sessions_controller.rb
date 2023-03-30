@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    Skip_before_action :authorized, only: :login
+    # Skip_before_action :authorize, only: :login
     def login
         user = User.find_by(name: params[:name])
       

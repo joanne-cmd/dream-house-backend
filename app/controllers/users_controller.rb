@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     wrap_parameters format: []
-    Skip_before_action :authorized, only: [:create]
+    Skip_before_action :authorize, only: [:create]
 
     # finding the current user using the session id
     def show
