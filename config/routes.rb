@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   resources :reviews
   resources :houses
 
-  post "/login", to: "sessions#login"
+  get "/loggedin", to: "user#loggedin"
 
+  # get "/me", to: "users#show"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
   post "/login", to: "sessions#login"
+  delete "/logout", to: "session#logout"
 end
