@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     wrap_parameters format: []
-    # Skip_after_action :authorize, only: [:create]
+    Skip_after_action :authorize, only: [:create]
 
     # finding the current user using the session id
     
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
            render json: {loggedin: false}
         end      
       end
-      
+
     # get all users
     def index
         users= User.all

@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
     def login
 
         user = User.find_by(name: params[:name])
-      
+       
         if user && user.authenticate(params[:password])
-          byebug
+        
           session[:user_id] = user.id
           
           render json: { status: :created, loggedin: true, user: user }
@@ -16,10 +16,8 @@ class SessionsController < ApplicationController
 
       #logout
    def logout
-
-
     session.delete :user_id
     head :no_content
- end
+   end
 
 end
